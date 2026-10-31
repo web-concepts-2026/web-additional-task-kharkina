@@ -19,3 +19,4 @@ while True:
     print("Method:", method)
     print("Path:", path)
     connection.close()
+
