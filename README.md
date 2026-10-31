@@ -4,7 +4,7 @@ It is a basic server written in Python using socket library that reads each raw 
 
 ## Run it:
 
-python 3 myserver.py
+python3 myserver.py
 
 Then open http://localhost:8000/
 
