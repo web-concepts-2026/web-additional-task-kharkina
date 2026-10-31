@@ -1,5 +1,6 @@
 import socket
 
+
 server = socket.socket()
 server.bind(("localhost", 8000))
 server.listen()
@@ -35,6 +36,19 @@ while True:
     print("Path:", path)
     print("Query", query)
     print("Headers", headers)
+
+    file = open("index.html")
+    html = file.read()
+    file.close()
+
+    body = html.encode()
+
+    response = "HTTP/1.1 200 OK\r\n"
+    response += "Content-type: text/html\r\n"
+    response += "Content-length: " +str(len(body)) + "\r\n"
+    response += "\r\n"
+
+    connection.sendall(response.encode() + body)
     connection.close()
 
 
